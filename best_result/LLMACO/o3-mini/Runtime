@@ -1,6 +1,0 @@
-all: 6596.3348s
-bicg: 1975.0855s
-gesummv: 602.5432s
-doitgen: 237.8110s
-atax: 1611.3304s
-mvt: 2169.6502s
