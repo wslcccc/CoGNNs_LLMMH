@@ -332,7 +332,7 @@ def inference(dataset):
             data_ini = data
             break
     model = Net(gumbel_args=gumbel_args, env_args=env_args, action_args=action_args).to(FLAGS.device)
-    old_state_dict = torch.load('/home/wslcccc/CoGNN-DSE_1/baseline_dataset/model/CoGNN_NEW.pth', map_location=torch.device(FLAGS.device))
+    old_state_dict = torch.load('/home/xxx/CoGNN-DSE_1/baseline_dataset/model/CoGNN_NEW.pth', map_location=torch.device(FLAGS.device))
     model.load_state_dict(old_state_dict)
     testr, loss_dict = test(train_loader, 'test', model)
     value_1 = 0
@@ -349,14 +349,14 @@ def inference(dataset):
 
 # inference process
 if __name__ == "__main__":
-    dataset_dir = os.path.abspath('/home/wslcccc/CoGNN-DSE_1/baseline_dataset/std')
+    dataset_dir = os.path.abspath('/home/xxx/CoGNN-DSE_1/baseline_dataset/std')
     dataset = os.listdir(dataset_dir)
     dataset_list = generate_dataset(dataset_dir, FLAGS.dataset_unseen, print_info=False)
     inference(dataset_list)
 # train process
 # if __name__ == "__main__":
 #     batch_size = 64
-#     dataset_dir = os.path.abspath('/home/wslcccc/CoGNN-DSE_1/baseline_dataset/std')
+#     dataset_dir = os.path.abspath('/home/xxx/CoGNN-DSE_1/baseline_dataset/std')
 #     dataset_list = generate_dataset(dataset_dir, FLAGS.dataset_seen, print_info=False)
 #     print(f'Reading dataset from {dataset_dir}')
 #     train_ds, test_ds, val_ds = split_dataset(dataset_list, shuffle=True, seed=128)
@@ -372,7 +372,7 @@ if __name__ == "__main__":
 #             break
 #     model = Net(gumbel_args=gumbel_args, env_args=env_args, action_args=action_args).to(FLAGS.device)
 #     print(model)
-#     model_path = '/home/wslcccc/CoGNN-DSE_1/baseline_dataset/model/CoGNN_NEW.pth'
+#     model_path = '/home/xxx/CoGNN-DSE_1/baseline_dataset/model/CoGNN_NEW.pth'
 #     if os.path.isfile(model_path):
 #         old_state_dict = torch.load(model_path, map_location=torch.device(FLAGS.device))
 #         model.load_state_dict(old_state_dict)

@@ -296,9 +296,9 @@ def train_main(dataset, pragma_dim = None):
                 break
         if FLAGS.task == 'regression':
             torch.save(model.state_dict(),
-                       '/home/wslcccc/CoGNNs-LLMMH/save_models_and_data/regression_model_state_dict.pth')
+                       '/home/xxx/CoGNNs_LLMMH/save_models_and_data/regression_model_state_dict.pth')
         else:
-            torch.save(model.state_dict(), '/home/wslcccc/CoGNNs-LLMMH/save_models_and_data/class_model_state_dict.pth')
+            torch.save(model.state_dict(), '/home/xxx/CoGNNs_LLMMH/save_models_and_data/class_model_state_dict.pth')
 
     epochs = range(epoch+1)
     import matplotlib
@@ -319,9 +319,9 @@ def train_main(dataset, pragma_dim = None):
     if len(val_loader) > 0:
         saver.log_info(f'min val loss at epoch: {val_losses.index(min(val_losses)) + 1}')
     if FLAGS.task == 'regression':
-        torch.save(model.state_dict(), '/home/wslcccc/CoGNNs-LLMMH/save_models_and_data/regression_model_state_dict.pth')
+        torch.save(model.state_dict(), '/home/xxx/CoGNNs_LLMMH/save_models_and_data/regression_model_state_dict.pth')
     else:
-        torch.save(model.state_dict(), '/home/wslcccc/CoGNNs-LLMMH/save_models_and_data/class_model_state_dict.pth')
+        torch.save(model.state_dict(), '/home/xxx/CoGNNs_LLMMH/save_models_and_data/class_model_state_dict.pth')
 
 
 

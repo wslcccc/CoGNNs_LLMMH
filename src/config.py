@@ -25,15 +25,15 @@ tag = 'whole-machsuite-poly'
 parser.add_argument('--tag', default=tag)
 
 # encoder_path = None
-encoder_path = '/home/wslcccc/CoGNNs-LLMMH/save_models_and_data/encoders.klepto'
+encoder_path = '/home/xxx/CoGNNs-LLMMH/save_models_and_data/encoders.klepto'
 parser.add_argument('--encoder_path', default=encoder_path)
 
 model_path = None
-# model_path = '/home/wslcccc/CoGNNs-LLMMH/save_models_and_data/regression_model_state_dict.pth'
+# model_path = '/home/xxx/CoGNNs-LLMMH/save_models_and_data/regression_model_state_dict.pth'
 parser.add_argument('--model_path', default=model_path)
 
 class_model_path = None
-# class_model_path = '/home/wslcccc/CoGNNs-LLMMH/save_models_and_data/class_model_state_dict.pth'
+# class_model_path = '/home/xxx/CoGNNs-LLMMH/save_models_and_data/class_model_state_dict.pth'
 parser.add_argument('--class_model_path', default=class_model_path)
 parser.add_argument('--num_features', default=153)
 
@@ -54,6 +54,7 @@ explorer = 'LLMEA'
 # explorer = 'SA'
 # explorer = 'ACO'
 # explorer = 'Exhastive'
+
 parser.add_argument('--explorer', default=explorer)
 
 model_tag = 'test'
@@ -156,7 +157,7 @@ parser.add_argument("--act_model_type", default=ModelType.MEAN_GNN,
 parser.add_argument("--act_num_layers", default=2, type=int)
 parser.add_argument("--act_dim", default=16, type=int)
 
-# LMEA parameters
+# LLMMH parameters
 # llm_model = "gpt-4o"
 # llm_model = "gpt-4.1"
 # llm_model = "o3-mini"
@@ -165,14 +166,13 @@ llm_model = "deepseek-r1"
 
 parser.add_argument("--llm_model", default=llm_model, type=str)
 
-# open_ai_keys = "sk-7H6zhEOBkuIF3H2naAx4MJ5Z2bU0es51a8nZdejmMwyhNcG5"
-# open_ai_keys = "sk-IMuJr0wkvlqGOrzNNW2dhbUVZ88kC4Av5RzKZD05T5WS9JiE"
-open_ai_keys = "sk-085e768b0fe245b4be0b2dde571eb4d9"
+open_ai_keys = "sk-xxxxx"
+
+
 parser.add_argument("--api_key", default=open_ai_keys, type=str)
 
-# gpt-3.5-turbo、gpt-4、gpt-4-turbo、gpt-4o
-# open_ai_base = "https://chatapi.littlewheat.com/v1"
-open_ai_base = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+open_ai_base = "Api interface URL"
+
 
 parser.add_argument("--api_base", default=open_ai_base, type=str)
 

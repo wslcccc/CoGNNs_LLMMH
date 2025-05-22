@@ -38,7 +38,7 @@ tag = 'new_speedup'
 
 SAVE_DIR = join(get_save_path(), FLAGS.dataset,
                 f'new-train-{FLAGS.task}_with-invalid_{FLAGS.invalid}-normalization_{FLAGS.norm_method}_no_pragma_{FLAGS.no_pragma}_tag_{FLAGS.tag}_{"".join(TARGET)}')
-ENCODER_PATH = '/home/wslcccc/CoGNNs-LLMMH/save_models_and_data'
+ENCODER_PATH = '/home/xxx/CoGNNs_LLMMH/save_models_and_data'
 create_dir_if_not_exists(SAVE_DIR)
 
 DATASET = 'machsuite-poly'
@@ -468,7 +468,7 @@ def get_data_list():
                'enc_ftype_edge': enc_ftype_edge, 'enc_ptype_edge': enc_ptype_edge}
 
         save(obj, join(ENCODER_PATH, 'encoders'))
-        save(init_feat_dict, join('/home/wslcccc/CoGNNs-LLMMH/save_models_and_data', 'pragma_dim'))
+        save(init_feat_dict, join('/home/xxx/CoGNNs_LLMMH/save_models_and_data', 'pragma_dim'))
 
         for gname, feat_dim in init_feat_dict.items():
             saver.log_info(f'{gname} has initial dim {feat_dim}')

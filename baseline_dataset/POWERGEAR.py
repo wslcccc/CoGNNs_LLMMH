@@ -293,7 +293,7 @@ def inference(dataset):
                        num_layers=3, dim=4, use_overall=False, drop_out=0.2, pool_aggr='add',
                        overall_dim_large=128, relations=4,
                        aggregate='add', simple_JK='sum').to(FLAGS.device)
-    old_state_dict = torch.load('/home/wslcccc/CoGNN-DSE_1/baseline_dataset/model/POWERGAER.pth', map_location=torch.device(FLAGS.device))
+    old_state_dict = torch.load('/home/xxx/CoGNNs_LLMMH/baseline_dataset/model/POWERGAER.pth', map_location=torch.device(FLAGS.device))
     model.load_state_dict(old_state_dict)
     testr, loss_dict = test(train_loader, 'test', model)
     value_1 = 0
@@ -310,14 +310,14 @@ def inference(dataset):
 
 # inference process
 if __name__ == "__main__":
-    dataset_dir = os.path.abspath('/home/wslcccc/CoGNN-DSE_1/baseline_dataset/std')
+    dataset_dir = os.path.abspath('/home/xxx/CoGNNs_LLMMH/baseline_dataset/std')
     dataset = os.listdir(dataset_dir)
     dataset_list = generate_dataset(dataset_dir, FLAGS.dataset_unseen, print_info=False)
     inference(dataset_list)
 # train process
 # if __name__ == "__main__":
 #     batch_size = 128
-#     dataset_dir = os.path.abspath('/home/wslcccc/CoGNN-DSE_1/baseline_dataset/std')
+#     dataset_dir = os.path.abspath('/home/xxx/CoGNNs_LLMMH/baseline_dataset/std')
 #     dataset_list = generate_dataset(dataset_dir, FLAGS.dataset_seen, print_info=False)
 #     print(f'Reading dataset from {dataset_dir}')
 #     train_ds, test_ds, val_ds = split_dataset(dataset_list, shuffle=True, seed=128)
@@ -355,7 +355,7 @@ if __name__ == "__main__":
 #         test_losses.append(testr)
 #         val_losses.append(val)
 #         torch.save(model.state_dict(),
-#                    '/home/wslcccc/CoGNN-DSE_1/baseline_dataset/model/POWERGAER.pth')
+#                    '/home/xxx/CoGNNs_LLMMH/baseline_dataset/model/POWERGAER.pth')
 #     import matplotlib
 #
 #     matplotlib.use('TkAgg')

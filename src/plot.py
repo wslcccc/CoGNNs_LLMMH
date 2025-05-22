@@ -11,9 +11,9 @@ if __name__ == '__main__':
     for alg in algor:
         dict2 = {}
         for kernel in dse_KERNELS:
-            with open(f'/home/wslcccc/CoGNN-DSE_1/best_result/benchmark/{kernel}.pickle', 'rb') as f:
+            with open(f'/home/wslcccc/CoGNNs_LLMMH/best_result/benchmark/{kernel}.pickle', 'rb') as f:
                 data_1 = pickle.load(f)
-            with open(f'/home/wslcccc/CoGNN-DSE_1/best_result/plot/{alg}/{kernel}.pickle', 'rb') as f:
+            with open(f'/home/wslcccc/CoGNNs_LLMMH/best_result/plot/{alg}/{kernel}.pickle', 'rb') as f:
                 data = pickle.load(f)
             list1 = []
             data_1_values = []
