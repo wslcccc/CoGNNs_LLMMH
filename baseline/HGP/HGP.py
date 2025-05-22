@@ -9,8 +9,7 @@ from src.config import FLAGS
 from collections import OrderedDict
 from torch import nn
 from src.utils import MLP, _get_y_with_target
-jknFlag = 0
-
+jknFlag = 1
 class HierNet(torch.nn.Module):
     def __init__(self, in_channels, hidden_channels, num_layers, conv_type, drop_out=0.0, pool_ratio=0.5):
         super(HierNet, self).__init__()

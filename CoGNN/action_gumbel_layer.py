@@ -5,6 +5,7 @@ from torch.nn import Module, ModuleList
 from torch_geometric.typing import NoneType  # noqa
 from torch_geometric.typing import Adj, OptTensor
 from CoGNN.model_parse import GumbelArgs, ActionNetArgs
+import tqdm
 
 class ActionNet(nn.Module):
     def __init__(self, action_args: ActionNetArgs):

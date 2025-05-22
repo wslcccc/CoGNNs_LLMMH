@@ -8,6 +8,7 @@ from src.config import FLAGS
 from src.utils import MLP, _get_y_with_target
 from torch import nn
 from collections import OrderedDict
+import tqdm
 
 class GCNNet(torch.nn.Module):
     def __init__(self, in_channels, hidden_channels=None, num_layers=2, drop_out=0.1):

@@ -9,7 +9,7 @@ from os.path import join, basename
 from glob import glob, iglob
 import pandas as pd
 from sklearn.preprocessing import OrdinalEncoder
-
+import tqdm
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 import matplotlib
