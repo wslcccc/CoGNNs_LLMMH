@@ -19,6 +19,8 @@ This project is an automated framework. By using GNNs as an alternative model to
 ## <span id="jump2">Project File Tree</span>
 ```
 |--CoGNNs_LLMMH
+|--baseline                        
+|--baseline_dataset    
 |   +--CoGNN                       # components of CoGNNs
 |   +--action_gumbel_layer.py
 |   +--layer.py
@@ -27,7 +29,6 @@ This project is an automated framework. By using GNNs as an alternative model to
 |--LLM_MH                          # the algorithm details of the LLMMH framework and the LLM call code
 |   +--dse.py
 |   +--LLM.py
-|--save_models_and data
 |--src                             # the source codes for defining and training the model and running the DSE
 |   +--config.py
 |   +--config_ds.py
