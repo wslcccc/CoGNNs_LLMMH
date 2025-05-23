@@ -1067,7 +1067,6 @@ class LMACOExplorer(Explorer):
         self.log.info(f'Explored {self.explored_point} points')
 
     def calculate_probability(self, param):
-        """计算参数选项的选择概率"""
         value = self.params[param]
         pheromone = self.pheromone[param]
         if type(value[0]) == str:
@@ -1080,7 +1079,6 @@ class LMACOExplorer(Explorer):
         return probabilities
 
     def update_pheromone(self, ants: List[Ant]):
-        """更新信息素（全局更新与挥发）"""
         for param in self.param_names:
             self.pheromone[param] *= (1 - self.rho)
 
@@ -1094,7 +1092,6 @@ class LMACOExplorer(Explorer):
 
 
     def update_pareto_front(self, ants: List[Ant]):
-        """更新帕累托前沿"""
         for ant in ants:
             if ant.violation > 0:
                 continue
@@ -1109,7 +1106,6 @@ class LMACOExplorer(Explorer):
                 self.pareto_front.append(ant)
 
     def is_dominated(self, sol_a, sol_b) -> bool:
-        """检查sol_a是否被sol_b支配"""
         better = False
         if sol_a > sol_b:
             return True
@@ -1385,7 +1381,6 @@ class ACOExplorer(Explorer):
         self.log.info(f'Explored {self.explored_point} points')
 
     def calculate_probability(self, param):
-        """计算参数选项的选择概率"""
         value = self.params[param]
         pheromone = self.pheromone[param]
         if type(value[0]) == str:
@@ -1409,7 +1404,7 @@ class ACOExplorer(Explorer):
     def update_pareto_front(self, ants: List[Ant]):
         for ant in ants:
             if ant.violation > 0:
-                continue  # 跳过违反约束的解
+                continue
             is_pareto = True
             for front_sol in self.pareto_front[:]:
                 if self.is_dominated(ant.fitness, front_sol.fitness):
