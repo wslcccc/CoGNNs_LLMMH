@@ -30,7 +30,7 @@ if __name__ == '__main__':
             # KERNELS = ['doitgen', 'mvt']
             start_time = time.time()
             dict_time = {}
-            KERNELS = ['bicg', 'gesummv', 'doitgen', 'atax', 'mvt']
+            KERNELS = ['bicg', 'heat-3d', 'gemm-p', 'atax', 'mvt']
             for kernel in KERNELS:
                 # if 'md' not in kernel:
                 #     continue
