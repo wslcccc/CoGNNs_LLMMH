@@ -2,19 +2,12 @@ import random
 import tsplib95
 import time
 import csv
-# langchain用于部署大语言模型
-# PromptTemplate是一个语言模型的prompt模版，ChatPromptTemplate是用于chat model的prompt模版
-# HumanMessagePromptTemplate是用户发出的prompt
 from langchain.prompts import PromptTemplate, ChatPromptTemplate, HumanMessagePromptTemplate
-# 用于启动AI行为的消息
 from langchain.schema.messages import SystemMessage
 
-# 大语言模型chain
 from langchain.chains import LLMChain
-# 拿到openai的返回结果
 from langchain_community.callbacks.manager import get_openai_callback
 from src.config import FLAGS
-# 拿到date和time
 from datetime import datetime
 
 def llm_process_ec(llm, tokens, secs, fitness, current_population, pragmas_possible_value, result_number):
