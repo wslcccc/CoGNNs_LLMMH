@@ -284,7 +284,7 @@ class Explorer():
             self.log)
         self.batch_size = 1
         # Status checking
-        self.num_top_designs = 3
+        self.num__designs = 10
         self.key_perf_dict = OrderedDict()
         self.best_results_dict = {}
         self.best_result: Result = Result()
@@ -446,6 +446,19 @@ class Explorer():
             else:
                 refs_perf = float(inf)
         point_key = gen_key_from_design_point(result.point)
+        """ 
+        The following code can also be replaced by the dominance relationship.
+        function findNonDominatedSolutions(designPoints):
+                nonDominatedSet = empty list
+                for each point p in designPoints:
+                    dominated = false
+                    for each point q in designPoints:
+                        if p != q and dominates(q, p):
+                            dominated = true
+                            break
+                    if not dominated:
+                        add p to nonDominatedSet
+                return nonDominatedSet"""
         if point_key not in self.key_perf_dict and result.valid and REF(result.quality,
                                                                         refs_perf) != result.quality:  # if the new result is better than the references designs
             self.best_result = result
