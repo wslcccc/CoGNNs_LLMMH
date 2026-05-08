@@ -73,8 +73,8 @@ def _report_rmse_etc(points_dict, label, print_result=True):
             pred_li = [data for _,data in d['pred']]
             num_data = len(true_li)
             mape = mean_absolute_percentage_error(true_li, pred_li)
-            rmse = mean_squared_error(true_li, pred_li, squared=False)
-            mse = mean_squared_error(true_li, pred_li, squared=True)
+            rmse = mean_squared_error(true_li, pred_li)
+            mse = mean_squared_error(true_li, pred_li)
             mae = mean_absolute_error(true_li, pred_li)
             max_err = max_error(true_li, pred_li)
             true_rank = rankdata(true_li)
@@ -82,7 +82,7 @@ def _report_rmse_etc(points_dict, label, print_result=True):
             tau = kendalltau(true_rank, pred_rank)[0]
             data['target'].append(target_name)
             data['mape'].append(mape)
-            data['rmse'].append(rmse)
+            data['rmse'].append(np.sqrt(rmse))
             data['mse'].append(mse)
             data['mae'].append(mae)
             data['max_err'].append(max_err)
